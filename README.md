@@ -1,77 +1,62 @@
-# React + TypeScript + Vite
+# [اسم المشروع] — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+واجهة مستخدم لمنصة [تبرعات / وصف المشروع] مبنية بـ **React 19** و **Vite** و **TypeScript**، وبتتكامل مع Backend مبني بـ Strapi 5.
 
-Currently, two official plugins are available:
+## المميزات
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- واجهة سريعة وRresponsive بالكامل (Tailwind CSS 4)
+- إدارة الحالة العامة بـ Redux Toolkit
+- Routing متعدد الصفحات بـ React Router
+- جلب المحتوى (مقالات، حملات، ...) من Strapi API
+- دفع إلكتروني آمن عن طريق Stripe
+- تحسين الأداء تلقائياً بـ React Compiler
+- [أضف مميزاتك: مثلاً نظام تبرع، مقالات، لوحة تحكم ...]
 
-## React Compiler
+## التقنيات المستخدمة
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+| التقنية | الاستخدام |
+|---|---|
+| React 19 | بناء الواجهة |
+| TypeScript | Type safety |
+| Vite 8 | أداة البناء وسيرفر التطوير |
+| Tailwind CSS 4 | التصميم |
+| Redux Toolkit + React Redux | إدارة الحالة |
+| React Router | التنقل بين الصفحات |
+| Font Awesome | الأيقونات |
+| ESLint | فحص جودة الكود |
 
-Note: This will impact Vite dev & build performances.
+## المتطلبات
 
-## Expanding the ESLint configuration
+- Node.js 20 أو أحدث
+- npm
+- تشغيل الـ Backend (Strapi) على `http://localhost:1337`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## التثبيت
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone [رابط الريبو]
+cd [اسم-الفولدر]
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## متغيرات البيئة
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+أنشئ ملف `.env` في جذر المشروع:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```env
+VITE_API_URL=http://localhost:1337/api
+VITE_STRIPE_PUBLIC_KEY=pk_test_xxxxx
 ```
+
+> استخدم المفتاح العام (Publishable) فقط في الـ Frontend، والمفتاح السري يفضل في الـ Backend.
+
+## التشغيل
+
+```bash
+npm run dev       # سيرفر التطوير
+npm run build     # بناء نسخة الإنتاج
+npm run preview   # معاينة نسخة الإنتاج
+npm run lint      # فحص الكود
+```
+
+## هيكل المشروع
