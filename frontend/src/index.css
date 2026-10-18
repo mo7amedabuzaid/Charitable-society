@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+*{
+  font-family: "Cairo", "Poppins", sans-serif;
+}
+:root {
+  --primary: #006948;
+  --primary-dark: #056b4a;
+  --primary-light: #73ad9b;
+  --white: #ffffff;
+  --cream: #e2e0d0;
+  --beige: #d6cbb6;
+  --text: #41494e;
+}
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-cream: var(--cream);
+  --color-beige: var(--beige);
+  --color-text: var(--text);
+}
+
+#root{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+}
